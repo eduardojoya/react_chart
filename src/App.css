@@ -1,24 +1,225 @@
-.App {
+body {
+  background-color: var(--background);
+  font-family: Verdana, Geneva, sans-serif;
+  margin: 0;
+  paddng: 0
+}
+
+
+:root {
+  --bar: #be97dc;
+  --odd: #eec1ea;
+  --even: #a374d5;
+  --hover: #c2ffbe;
+  --title: #ffc15e;
+  --background: #fffbbe;
+  --main-margins: 10vw;
+  --top-bar-height: 100px;
+  --content-height: calc(100vh - var(--top-bar-height));
+}
+
+.MainContainer {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: var(--text);
+  padding-left: var(--main-margins);
+  padding-right: var(--main-margins);
+}
+
+
+.TitleBar {
+  box-sizing: border-box;
+  padding-left: 10vw;
+  padding-top: 5px;
+  margin-top: 0;
+  padding-bottom: 5px;
+  /* color: var(--text); */
+  background: var(--title);
+  border-bottom: 4px solid var(--background);
+  box-shadow: inset -30px -30px 50px rgba(0, 0, 0, .05);
+  height: var(--top-bar-height);
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  font-size: 1.8em;
+}
+
+.TitleBar>h1 {
+  font-size: 1.6em;
+  line-height: .01;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.MainContainer {
+  grid-template-rows: 150px auto;
+  display: grid;
+  min-height: var(--content-height);
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+
+h1 {
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.CurrencyChooser {
+  float: right;
+}
+
+.MultipleCurrencies select {
+  min-width: 100px;
+}
+
+.div {
+  display: block;
+}
+
+.label {
+  cursor: default;
+}
+
+.CurrencyChooser-select {
+  border: 1px solid var(--title);
+  background: var(--background);
+  padding: 2px;
+}
+
+
+.BarChart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 500px;
+  grid-gap: 20px;
+  align-items: end;
+  margin-top: 100px;
+  margin-left: 150px;
+  margin-right: 150px;
+  transition: transform 0.5s, filter 0.5s;
+  transform: perspective(000px) translate3d(0px, 1px, 0px);
   text-align: center;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.BarChart-bar {
+  font-size: 2.8vw;
+  height: 50px;
+  -webkit-transition: -webkit-transform .5s, -webkit-filter .5s;
+  transition: -webkit-transform .5s, -webkit-filter .5s;
+  -o-transition: transform .5s, filter .5s;
+  transition: transform .5s, filter .5s;
+  transition: transform .5s, filter .5s, -webkit-transform .5s, -webkit-filter .5s;
+  -webkit-transform: perspective(1000px) translate3d(0, 1px, 0);
+  transform: perspective(1000px) translate3d(0, 1px, 0);
+  text-align: center
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.BarChart-bar:nth-child(2n) {
+  background-color: var(--even);
 }
 
-.App-intro {
-  font-size: large;
+.BarChart-bar:nth-child(odd) {
+  background-color: var(--odd);
+}
+
+
+.BarChart-bar:hover {
+  background-color: var(--hover);
+  transition: transform 2s, filter 2s;
+  filter: brightness(1);
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  cursor: pointer;
+  transform: perspective(1000px) translate3d(0px, 0px, 100px);
+}
+
+select:not(:-internal-list-box) {
+  background-color: buttonface;
+}
+
+select:not(:-internal-list-box) {
+  overflow: visible !important;
+}
+
+select {
+  border-radius: 0px;
+  border-color: rgb(169, 169, 169);
+}
+
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+
+select:-internal-list-box {
+  -webkit-appearance: listbox;
+  align-items: flex-start;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  vertical-align: text-bottom;
+  white-space: nowrap;
+  border-width: 1px;
+  border-style: inset;
+  border-color: grey;
+  border-image: initial;
+  border-radius: initial;
+}
+
+select {
+  -webkit-appearance: menulist;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  color: black;
+  background-color: white;
+  cursor: default;
+  border-width: 1px;
+  border-style: solid;
+  border-color: initial;
+  border-image: initial;
+}
+
+,
+select {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+}
+
+,
+select {
+  -webkit-writing-mode: horizontal-tb !important;
+}
+
+.MultipleCurrencies {
+  min-width: 250px;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

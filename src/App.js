@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-
 class App extends Component {
   state = {
     currency: "EUR",
@@ -133,8 +132,6 @@ class App extends Component {
           <div class="BarChart">
             {" "}
             {Object.keys(this.state.data.rates).map(datum => (
-              // Add OnClick method onto the Bars and show
-              // alert displaying what the currency is
               <div
                 className="BarChart-bar"
                 style={{

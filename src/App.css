@@ -7,10 +7,9 @@ body {
 
 
 :root {
-  --bar: #be97dc;
   --odd: #eec1ea;
   --even: #a374d5;
-  --hover: #c2ffbe;
+  --hover: #c1eaee;
   --title: #ffc15e;
   --background: #fffbbe;
   --main-margins: 10vw;
@@ -69,10 +68,12 @@ h1 {
 
 .CurrencyChooser {
   float: right;
+  margin-top: 10px;
 }
 
 .MultipleCurrencies select {
   min-width: 100px;
+  margin-top: 20px;
 }
 
 .div {
@@ -102,7 +103,6 @@ h1 {
   transition: transform 0.5s, filter 0.5s;
   transform: perspective(000px) translate3d(0px, 1px, 0px);
   text-align: center;
-
 }
 
 
@@ -116,7 +116,7 @@ h1 {
   transition: transform .5s, filter .5s, -webkit-transform .5s, -webkit-filter .5s;
   -webkit-transform: perspective(1000px) translate3d(0, 1px, 0);
   transform: perspective(1000px) translate3d(0, 1px, 0);
-  text-align: center
+  text-align: center;
 }
 
 .BarChart-bar:nth-child(2n) {

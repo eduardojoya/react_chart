@@ -7,11 +7,11 @@ body {
 
 
 :root {
-  --odd: #eec1ea;
-  --even: #a374d5;
-  --hover: #c1eaee;
-  --title: #ffc15e;
-  --background: #fffbbe;
+  --odd: #6ef3d6;
+  --even: #0dceda;
+  --hover: #fffa67;
+  --title: #c6fce5;
+  --background: #ebfffa;
   --main-margins: 10vw;
   --top-bar-height: 100px;
   --content-height: calc(100vh - var(--top-bar-height));

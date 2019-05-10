@@ -138,7 +138,7 @@ class App extends Component {
                   height: 100 / this.state.data.rates[datum] + "%"
                 }}
               >
-                {datum} {this.state.data.rates[datum]}{" "}
+                {datum} {this.state.data.rates[datum].toFixed(2)}{" "}
               </div>
             ))}{" "}
           </div>{" "}
